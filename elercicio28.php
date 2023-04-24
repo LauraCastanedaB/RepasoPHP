@@ -18,6 +18,10 @@ try{ //condicional de errores
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Conexion establecida";
 
+    //insertar informacion en la base de datos 
+    $sql="INSERT INTO `fotos` (`id`, `nombre`, `ruta`) VALUES (NULL, 'Jugando con la programacion', 'foto.jpg')";
+    $conexion->exec($sql);
+
 }catch(PDOException $error){// este muestra que error se esta generando
     echo "Conexion erronea".$error;
 }
